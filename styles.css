@@ -1,0 +1,87 @@
+﻿:root {
+      --ink: #111827; --slate: #4b5563; --muted: #6b7280; --line: #d1d5db;
+      --soft-line: #e5e7eb; --paper: #fff; --canvas: #f8f9fb; --panel: #f3f4f6;
+      --sans: Inter, sans-serif;
+      --display: "Space Grotesk", sans-serif; --mono: "JetBrains Mono", monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--canvas); font: 14px/1.5 var(--sans); }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .skip-link { position: absolute; left: -9999px; padding: 8px; background: var(--ink); color: #fff; }
+    .skip-link:focus { left: 16px; top: 16px; z-index: 100; }
+    .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: rgba(248,249,251,.96); backdrop-filter: blur(8px); }
+    .nav-shell, .canvas { width: min(1360px, calc(100% - 64px)); margin: 0 auto; }
+    .nav-shell { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; background: var(--ink); color: #fff; font: 600 12px var(--mono); }
+    .eyebrow, .tag, .meta, .filter { font: 500 11px/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+    .brand-title { display: block; font: 600 14px var(--display); letter-spacing: .03em; }
+    .brand-subtitle { display: block; color: var(--muted); font: 10px var(--mono); }
+    .nav-toggle { display: none; border: 2px solid var(--ink); background: var(--paper); padding: 8px 12px; cursor: pointer; }
+    .main-nav { display: flex; flex-wrap: wrap; gap: 4px; padding: 4px; background: var(--panel); }
+    .main-nav a { padding: 8px 12px; color: var(--slate); font: 500 11px var(--mono); text-decoration: none; }
+    .main-nav a:hover, .main-nav a:focus-visible, .main-nav a.active { background: var(--ink); color: #fff; outline: none; }
+    .canvas { padding: 40px 0; }
+    .section { margin-bottom: 64px; scroll-margin-top: 96px; }
+    .panel { border: 1px solid var(--ink); background: var(--paper); padding: 32px; }
+    .hero { display: grid; grid-template-columns: 7fr 5fr; align-items: center; gap: 40px; }
+    h1, h2, h3 { margin: 0; font-family: var(--display); line-height: 1.15; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); letter-spacing: -.05em; }
+    .hero h1 { margin-top: 16px; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+    .section-title { margin-top: 12px; }
+    h3 { font-size: 1.15rem; }
+    .hero h1 span { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px; }
+    .lead { max-width: 680px; margin: 20px 0; color: var(--slate); font-size: 1.05rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 9px 16px; border: 2px solid var(--ink); background: var(--ink); color: #fff; font: 600 12px var(--mono); text-decoration: none; cursor: pointer; }
+    .button:hover, .button:focus-visible { background: var(--paper); color: var(--ink); outline: none; }
+    .button.secondary { background: var(--paper); color: var(--ink); }
+    .button.secondary:hover, .button.secondary:focus-visible { background: var(--panel); }
+    .wireframe { position: relative; display: grid; place-items: center; min-height: 320px; overflow: hidden; border: 1px dashed var(--muted); background: var(--panel); text-align: center; }
+    .wireframe::before, .wireframe::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom right, transparent 49.8%, var(--line) 50%, transparent 50.2%); pointer-events: none; }
+    .wireframe::after { transform: scaleX(-1); }
+    .wireframe-label { position: relative; z-index: 1; max-width: 260px; padding: 12px; border: 1px solid var(--line); background: var(--paper); }
+    .wireframe-label strong, .wireframe-label small { display: block; font-family: var(--mono); }
+    .wireframe-label small { margin-top: 6px; color: var(--muted); font-size: 10px; }
+    .about-grid, .contact-grid { display: grid; grid-template-columns: 4fr 8fr; gap: 40px; }
+    .about-copy p, .contact-copy p { color: var(--slate); }
+    .facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 24px; }
+    .fact { border: 1px solid var(--soft-line); padding: 14px; background: var(--panel); }
+    .fact strong, .fact span { display: block; } .fact strong { font: 600 13px var(--display); } .fact span { margin-top: 3px; color: var(--muted); font: 11px var(--mono); }
+    .skills-grid, .project-grid, .timeline { display: grid; gap: 16px; }
+    .skills-grid { grid-template-columns: repeat(3, 1fr); margin-top: 24px; }
+    .skill-group, .project-card, .timeline-item { border: 1px solid var(--ink); background: var(--paper); padding: 20px; }
+    .skill-group { background: var(--panel); }
+    .skill-list { display: grid; gap: 8px; margin-top: 18px; }
+    .skill { display: flex; justify-content: space-between; gap: 12px; padding: 10px; background: var(--paper); border: 1px solid var(--soft-line); font: 11px var(--mono); }
+    .project-toolbar { margin-bottom: 24px; }
+    .project-grid { grid-template-columns: repeat(2, 1fr); }
+    .project-logo { display: block; width: 100%; height: 180px; object-fit: contain; padding: 28px; border: 1px solid var(--soft-line); background: var(--panel); }
+    .project-card { display: flex; flex-direction: column; gap: 16px; }
+    .project-card .wireframe { min-height: 150px; }
+    .project-card p { color: var(--slate); margin: 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+    .chip { padding: 4px 7px; background: var(--panel); border: 1px solid var(--soft-line); font: 10px var(--mono); }
+    .card-actions { display: flex; gap: 8px; }
+    .card-actions .button { flex: 1; padding: 8px; font-size: 10px; }
+    .timeline { grid-template-columns: repeat(3, 1fr); margin-top: 24px; }
+    .timeline-item { border-left: 4px solid var(--ink); }
+    .timeline-item p { color: var(--slate); }
+    .contact-grid { grid-template-columns: 5fr 7fr; }
+    .direct-links { display: grid; gap: 8px; margin-top: 24px; }
+    .direct-links a { display: flex; justify-content: space-between; padding: 12px; background: var(--panel); border: 1px solid var(--soft-line); text-decoration: none; font-family: var(--mono); }
+    form { display: grid; gap: 14px; padding: 20px; background: var(--panel); }
+    label { display: grid; gap: 6px; font: 600 11px var(--mono); text-transform: uppercase; }
+    input, select, textarea { width: 100%; border: 1px solid var(--ink); border-radius: 0; padding: 10px 12px; background: var(--paper); color: var(--ink); }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--ink); outline-offset: 2px; }
+    textarea { resize: vertical; min-height: 120px; }
+    .consent { display: flex; align-items: start; gap: 8px; color: var(--muted); font: 10px var(--mono); text-transform: none; }
+    .consent input { width: 16px; margin-top: 2px; }
+    .form-status { min-height: 20px; color: var(--slate); font: 11px var(--mono); }
+    footer { border-top: 1px solid var(--line); padding: 24px 32px; color: var(--muted); font: 10px var(--mono); }
+    .footer-inner { width: min(1360px, 100%); margin: auto; display: flex; justify-content: space-between; gap: 16px; }
+    @media (max-width: 980px) { .nav-shell, .canvas { width: min(100% - 48px, 760px); } .main-nav { display: none; position: absolute; left: 24px; right: 24px; top: 70px; flex-direction: column; border: 1px solid var(--ink); } .main-nav.open { display: flex; } .nav-toggle { display: block; } .hero, .about-grid, .contact-grid { grid-template-columns: 1fr; } .skills-grid, .project-grid, .timeline { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .nav-shell, .canvas { width: calc(100% - 32px); } .canvas { padding: 24px 0; } .section { margin-bottom: 40px; } .panel { padding: 20px; } .skills-grid, .project-grid, .timeline, .facts { grid-template-columns: 1fr; } .wireframe { min-height: 230px; } .footer-inner { flex-direction: column; padding-inline: 16px; } footer { padding-inline: 16px; } }
